@@ -1,0 +1,8 @@
+- id: validate-recipemd
+  name: Validate RecipeMD
+  description: Validator checks that all *.md files have valid RecipeMD format.
+  entry: recipemd-validator
+  language: python
+  language_version: python3
+  types: [markdown]
+  minimum_pre_commit_version: '1.0.0'
