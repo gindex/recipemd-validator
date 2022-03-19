@@ -11,3 +11,16 @@ Add this to your `.pre-commit-config.yaml`:
     hooks:
       - id: validate-recipemd
 ```
+
+### Without pre-commit
+
+If you want to use this package without pre-commit, install it using `pip install "git+https://github.com/gindex/recipemd-validator.git"` and put the following in your `.git/hooks/pre-commit` and make the hook executable `chmod +x .git/hooks/pre-commit`:
+
+```sh
+#!/bin/sh
+
+if [[ !  -z "$(git diff --cached --name-only --diff-filter=ACM | grep .md$)" ]]; then
+    set -e
+    git diff --cached --name-only --diff-filter=ACM | grep .md$ | xargs -n 1 recipemd-validator
+fi
+```
