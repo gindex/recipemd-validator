@@ -14,7 +14,7 @@ Add this to your `.pre-commit-config.yaml`:
 
 ### Without pre-commit
 
-If you want to use this package without pre-commit, install it using ``pip install "git+git://github.com/gindex/recipemd-validator"`` and put the following in your ``.git/hooks/pre-commit.sh``:
+If you want to use this package without pre-commit, install it using `pip install "git+https://github.com/gindex/recipemd-validator.git"` and put the following in your `.git/hooks/pre-commit` and make the hook executable `chmod +x .git/hooks/pre-commit`:
 
 ```sh
 #!/bin/sh
